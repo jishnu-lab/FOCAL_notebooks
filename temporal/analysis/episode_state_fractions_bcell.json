@@ -1,0 +1,215 @@
+{
+ "_meta": {
+  "dataset": "/work/nvme/bhdw/asachan/data_files/firefate/bcell/outs/dynamic.h5",
+  "points_per_episode": 5,
+  "dist": 0.001,
+  "method": "per-window cell-state counts smoothed at the sampled points with the dictys Gaussian kernel used for the episodic GRN, averaged over the 5 points of each episode, normalised to sum to 1",
+  "trajectories": {
+   "ActB3/4_to_PB": {
+    "trajectory_range": [
+     0,
+     2
+    ],
+    "num_points": 20,
+    "n_episodes": 4
+   },
+   "ActB3/4_to_GC": {
+    "trajectory_range": [
+     0,
+     3
+    ],
+    "num_points": 20,
+    "n_episodes": 4
+   },
+   "ActB1/2_to_GC": {
+    "trajectory_range": [
+     1,
+     3
+    ],
+    "num_points": 40,
+    "n_episodes": 8
+   }
+  }
+ },
+ "ActB3/4_to_PB": {
+  "episode_1": {
+   "ActB-1": 0.0885,
+   "ActB-2": 0.2071,
+   "ActB-3": 0.2805,
+   "ActB-4": 0.3439,
+   "GC-1": 0.0146,
+   "GC-2": 0.0087,
+   "PB-2": 0.0211,
+   "earlyActB": 0.0097,
+   "earlyPB": 0.0259
+  },
+  "episode_2": {
+   "ActB-1": 0.0217,
+   "ActB-2": 0.0927,
+   "ActB-3": 0.2079,
+   "ActB-4": 0.457,
+   "GC-1": 0.0075,
+   "GC-2": 0.0047,
+   "PB-2": 0.1223,
+   "earlyActB": 0.0036,
+   "earlyPB": 0.0826
+  },
+  "episode_3": {
+   "ActB-1": 0.0028,
+   "ActB-2": 0.0216,
+   "ActB-3": 0.0815,
+   "ActB-4": 0.271,
+   "GC-1": 0.008,
+   "GC-2": 0.0036,
+   "PB-2": 0.4693,
+   "earlyActB": 0.0006,
+   "earlyPB": 0.1417
+  },
+  "episode_4": {
+   "ActB-1": 0.0001,
+   "ActB-2": 0.0025,
+   "ActB-3": 0.0161,
+   "ActB-4": 0.0548,
+   "GC-1": 0.0064,
+   "GC-2": 0.0025,
+   "PB-2": 0.812,
+   "earlyPB": 0.1056
+  }
+ },
+ "ActB3/4_to_GC": {
+  "episode_1": {
+   "ActB-1": 0.1045,
+   "ActB-2": 0.2339,
+   "ActB-3": 0.2995,
+   "ActB-4": 0.2578,
+   "GC-1": 0.0473,
+   "GC-2": 0.0239,
+   "PB-2": 0.0103,
+   "earlyActB": 0.0111,
+   "earlyPB": 0.0116
+  },
+  "episode_2": {
+   "ActB-1": 0.0447,
+   "ActB-2": 0.1521,
+   "ActB-3": 0.2718,
+   "ActB-4": 0.1924,
+   "GC-1": 0.2127,
+   "GC-2": 0.1008,
+   "PB-2": 0.0126,
+   "earlyActB": 0.0066,
+   "earlyPB": 0.0064
+  },
+  "episode_3": {
+   "ActB-1": 0.0103,
+   "ActB-2": 0.0506,
+   "ActB-3": 0.123,
+   "ActB-4": 0.0717,
+   "GC-1": 0.4919,
+   "GC-2": 0.2356,
+   "PB-2": 0.0125,
+   "earlyActB": 0.002,
+   "earlyPB": 0.0022
+  },
+  "episode_4": {
+   "ActB-1": 0.0017,
+   "ActB-2": 0.0104,
+   "ActB-3": 0.0318,
+   "ActB-4": 0.0149,
+   "GC-1": 0.6223,
+   "GC-2": 0.3095,
+   "PB-2": 0.0084,
+   "earlyActB": 0.0004,
+   "earlyPB": 0.0006
+  }
+ },
+ "ActB1/2_to_GC": {
+  "episode_1": {
+   "ActB-1": 0.4394,
+   "ActB-2": 0.3445,
+   "ActB-3": 0.1735,
+   "ActB-4": 0.0144,
+   "GC-1": 0.0034,
+   "GC-2": 0.0024,
+   "PB-2": 0.0014,
+   "earlyActB": 0.0207,
+   "earlyPB": 0.0004
+  },
+  "episode_2": {
+   "ActB-1": 0.3293,
+   "ActB-2": 0.366,
+   "ActB-3": 0.247,
+   "ActB-4": 0.0222,
+   "GC-1": 0.0071,
+   "GC-2": 0.0047,
+   "PB-2": 0.0025,
+   "earlyActB": 0.0205,
+   "earlyPB": 0.0007
+  },
+  "episode_3": {
+   "ActB-1": 0.2294,
+   "ActB-2": 0.3597,
+   "ActB-3": 0.3244,
+   "ActB-4": 0.0318,
+   "GC-1": 0.0193,
+   "GC-2": 0.011,
+   "PB-2": 0.0046,
+   "earlyActB": 0.0189,
+   "earlyPB": 0.001
+  },
+  "episode_4": {
+   "ActB-1": 0.1437,
+   "ActB-2": 0.3149,
+   "ActB-3": 0.3781,
+   "ActB-4": 0.041,
+   "GC-1": 0.0649,
+   "GC-2": 0.0324,
+   "PB-2": 0.0082,
+   "earlyActB": 0.0155,
+   "earlyPB": 0.0013
+  },
+  "episode_5": {
+   "ActB-1": 0.0722,
+   "ActB-2": 0.2175,
+   "ActB-3": 0.3448,
+   "ActB-4": 0.0422,
+   "GC-1": 0.2027,
+   "GC-2": 0.0962,
+   "PB-2": 0.0129,
+   "earlyActB": 0.01,
+   "earlyPB": 0.0016
+  },
+  "episode_6": {
+   "ActB-1": 0.0242,
+   "ActB-2": 0.0973,
+   "ActB-3": 0.2017,
+   "ActB-4": 0.0287,
+   "GC-1": 0.4263,
+   "GC-2": 0.2018,
+   "PB-2": 0.0146,
+   "earlyActB": 0.0042,
+   "earlyPB": 0.0013
+  },
+  "episode_7": {
+   "ActB-1": 0.0056,
+   "ActB-2": 0.0289,
+   "ActB-3": 0.0767,
+   "ActB-4": 0.0132,
+   "GC-1": 0.5811,
+   "GC-2": 0.2809,
+   "PB-2": 0.0116,
+   "earlyActB": 0.0012,
+   "earlyPB": 0.0007
+  },
+  "episode_8": {
+   "ActB-1": 0.0014,
+   "ActB-2": 0.0082,
+   "ActB-3": 0.0256,
+   "ActB-4": 0.0054,
+   "GC-1": 0.634,
+   "GC-2": 0.3165,
+   "PB-2": 0.0081,
+   "earlyActB": 0.0004,
+   "earlyPB": 0.0004
+  }
+ }
+}

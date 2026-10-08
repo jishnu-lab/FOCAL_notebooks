@@ -24,13 +24,15 @@ GC-vs-PB state-discriminative latent factors, Z11 u Z3 with HLA- genes dropped
 exactly by the union and not by Z11 alone. The union is written to the primary
 paths; Z11-only tables go to ``z11_only/`` for comparison.
 
-Settings follow ``focal/tests/episodic_fix_validation`` (the run on the bhdw
-cluster whose GRN scale matched the published tables): PB = (1, 2), GC = (1, 3),
-num_points = 20, points_per_episode = 5 (4 episodes), dist = 0.001,
-sparsity = 0.01, percentile = 98, pval_threshold = 1e-3, network ``w``.
+An episode is always 5 equidistant sampled points. A single branch is sampled at
+20 points (4 episodes); the entire trajectory at 40 points (8 episodes). Node 1 is
+the root (ActB-1), node 0 the bifurcation (ActB-3/4), so the PB / GC tables use the
+post-bifurcation branches PB = (0, 2), GC = (0, 3) with num_points = 20,
+points_per_episode = 5, dist = 0.001, sparsity = 0.01, percentile = 98,
+pval_threshold = 1e-3, network ``w``.
 
 ``--programs ko`` (inputs to Fig5) enriches the IRF4-KO (Z4) and BLIMP1-KO (Z5)
-programs instead, against the GC branch (1, 3) sampled at num_points = 40 -> 8
+programs instead, against the entire root-to-GC range (1, 3) sampled at num_points = 40 -> 8
 episodes of 5 points, writing ``config.IRF4['ep1'..'ep8']`` and
 ``config.BLIMP1[...]`` (``enrichment_episode_{i}.csv``). The tables those groups
 pointed at before (Oct 2025) predate the ISSUE #1 / #3 fixes -- every episode after
@@ -59,7 +61,8 @@ import pandas as pd
 
 HERE = Path(__file__).resolve().parent
 
-BRANCHES = {"pb": (1, 2), "gc": (1, 3)}
+# gcpb: post-bifurcation branches (20 points); ko: entire root-to-GC range (40 points)
+BRANCHES = {"gcpb": {"pb": (0, 2), "gc": (0, 3)}, "ko": {"gc": (1, 3)}}
 
 
 def log(msg: str) -> None:
@@ -178,7 +181,7 @@ def main(argv=None) -> int:
         **lf_files,
         "n_genes": {k: len(v[0]) for k, v in programs.items()},
         "destinations": {k: str(v[1]) for k, v in programs.items()},
-        "branches_ranges": BRANCHES,
+        "branches_ranges": BRANCHES[args.programs],
         "started": datetime.now().isoformat(timespec="seconds"),
         "host": os.uname().nodename,
     }
@@ -199,7 +202,7 @@ def main(argv=None) -> int:
     n_episodes = args.num_points // args.points_per_episode
     rows = []
     for branch in [b.strip() for b in args.branches.split(",")]:
-        rng = BRANCHES[branch]
+        rng = BRANCHES[args.programs][branch]
         log(f"===== {branch.upper()} trajectory_range={rng} =====")
         epi = EpisodeDynamics(
             dictys_dynamic_object=net,
